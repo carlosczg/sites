@@ -1,0 +1,638 @@
+/* Landing architecture — isolated so the official landscape can evolve independently. */
+.pdwrap {
+  width: min(1320px, 100%);
+  margin: 0 auto 12px;
+  padding-top: 34px;
+}
+
+.pdhead {
+  display: grid;
+  grid-template-columns: auto 1px auto 1px minmax(340px, auto);
+  justify-content: center;
+  align-items: center;
+  gap: 34px;
+  margin: 0 auto 30px;
+  padding: 0 20px;
+}
+
+.pdhead .db {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(26px, 2.4vw, 39px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.pdhead .dbmark {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 auto;
+}
+
+.pdhead .sep {
+  width: 1px;
+  height: 54px;
+  background: #31525a;
+}
+
+.pdhead .dai {
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(31px, 3vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.8;
+  text-align: center;
+}
+
+.pdhead .dai .plus {
+  color: #ff3621;
+}
+
+.pdhead .dai small {
+  display: block;
+  margin-top: 13px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+.pdhead .tag {
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(21px, 2.15vw, 35px);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+}
+
+.pdhead .tag i {
+  color: #ff3621;
+  font-style: normal;
+}
+
+.pdiagram {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  overflow: hidden;
+  border: 1px solid #214b54;
+  border-radius: 24px;
+  background: #12353e;
+  box-shadow: 0 28px 80px -45px rgba(0, 0, 0, 0.9);
+}
+
+.player {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  min-height: 92px;
+  padding: 17px 22px;
+  border: 1px solid #a45145;
+  border-radius: 13px;
+  background: #343638;
+}
+
+.player.apps {
+  background: #353738;
+}
+
+.player.work {
+  min-height: 196px;
+  align-items: stretch;
+  background: #303334;
+}
+
+.player.governance,
+.player.data,
+.player.infra {
+  border-color: #256684;
+  background: #173f4a;
+}
+
+.player > .lbl {
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(17px, 1.4vw, 23px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+.pdrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 28px;
+}
+
+.pditem {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  cursor: pointer;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.pditem:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.14);
+}
+
+.pditem:focus-visible,
+.gpill:focus-visible,
+.xchip:focus-visible {
+  outline: 2px solid #ff6a52;
+  outline-offset: 4px;
+}
+
+.itile {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #514946;
+  color: #ff7867;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.governance .itile,
+.data .itile,
+.infra .itile {
+  background: #1f5668;
+}
+
+.itile svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* Product marks sampled directly from Carlos's official DAIS platform artwork.
+   One lightweight source image preserves the exact two-tone artwork and tiles. */
+.itile.product-logo {
+  overflow: hidden;
+  background-color: transparent;
+  background-image: url("./assets/databricks-platform-reference.png");
+  background-repeat: no-repeat;
+  image-rendering: auto;
+  box-shadow: none;
+}
+
+.product-logo.logo-apps {
+  background-size: 1384.563px 774.761px;
+  background-position: -371.155px -199.437px;
+}
+
+.product-logo.logo-watch {
+  background-size: 1365.333px 764px;
+  background-position: -642.667px -196.667px;
+}
+
+.product-logo.logo-people {
+  background-size: 1365.333px 764px;
+  background-position: -924px -196.667px;
+}
+
+.product-logo.logo-genie {
+  background-size: 1260.308px 705.231px;
+  background-position: -272px -278.154px;
+}
+
+.product-logo.logo-bricks {
+  background-size: 1260.308px 705.231px;
+  background-position: -704px -280px;
+}
+
+.product-logo.logo-flower {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background-size: 1691.826px 946.435px;
+  background-position: -1199.478px -389.087px;
+}
+
+.product-logo.logo-lamp {
+  background-size: 1365.333px 764px;
+  background-position: -627.333px -386.667px;
+}
+
+.product-logo.logo-cog {
+  background-size: 1365.333px 764px;
+  background-position: -368px -464px;
+}
+
+.product-logo.logo-agent {
+  background-size: 1346.63px 753.534px;
+  background-position: -726.575px -457.644px;
+}
+
+.product-logo.logo-flow {
+  background-size: 1346.63px 753.534px;
+  background-position: -362.959px -556.274px;
+}
+
+.product-logo.logo-house {
+  background-size: 1365.333px 764px;
+  background-position: -670px -564px;
+}
+
+.product-logo.logo-db {
+  background-size: 1365.333px 764px;
+  background-position: -991.333px -564px;
+}
+
+.pditem .iname {
+  color: #f7f7f7;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(16px, 1.35vw, 22px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.workcontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  min-width: 0;
+}
+
+.pdrow.worktop {
+  display: grid;
+  grid-template-columns: minmax(390px, 1.25fr) minmax(350px, 1fr) minmax(170px, 0.35fr);
+  justify-content: stretch;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.pgroup {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+  padding: 15px 18px;
+  border: 1px solid #625650;
+  border-radius: 12px;
+  background: #514846;
+}
+
+.pgroup.genie {
+  justify-content: space-between;
+}
+
+.pgroup.devtools {
+  justify-content: space-around;
+  gap: 12px;
+  padding-inline: 14px;
+}
+
+.pgroup.devtools .pditem .iname {
+  font-size: clamp(15px, 1.12vw, 18px);
+}
+
+.pgroup .pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+}
+
+.gpill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  border-radius: 999px;
+  background: #f8f8f6;
+  color: #171717;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.gpill .d,
+.gpill:hover .d {
+  color: #ff5b47;
+}
+
+.gpill:hover {
+  background: #fff;
+  color: #171717;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 16px rgba(0, 0, 0, 0.22);
+}
+
+.gpill .d svg {
+  width: 14px;
+  height: 14px;
+}
+
+.vsep {
+  width: 1px;
+  align-self: stretch;
+  background: #b06558;
+}
+
+.workcontent .lbl.right {
+  align-self: center;
+  margin: 0;
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(17px, 1.35vw, 22px);
+  font-weight: 700;
+  line-height: 1.08;
+  text-align: right;
+}
+
+.pontology {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.pontology .line {
+  flex: 1;
+  height: 1px;
+  background: #b14f42;
+}
+
+.pontology .pditem .itile {
+  width: 38px;
+  height: 38px;
+}
+
+.pontology .pditem .itile svg {
+  width: 21px;
+  height: 21px;
+}
+
+.pontology .pditem .iname {
+  font-size: 18px;
+}
+
+.player.infra {
+  min-height: 56px;
+  padding: 10px 22px;
+}
+
+.pdrow.infra {
+  display: grid;
+  grid-template-columns: auto auto auto 1fr auto auto auto;
+  justify-content: stretch;
+  gap: 24px;
+}
+
+.infralabel {
+  color: #ecf3f4;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pditem.sm {
+  gap: 7px;
+}
+
+.pditem.sm .itile {
+  width: 27px;
+  height: 27px;
+  border-radius: 7px;
+  background: transparent;
+}
+
+.pditem.sm .itile svg {
+  width: 18px;
+  height: 18px;
+}
+
+.pditem.sm .iname {
+  color: #edf3f4;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.event-meta {
+  margin: 18px 5px 0;
+  color: #90a8ad;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.event-meta::first-letter {
+  color: #ff3621;
+}
+
+.alsohead {
+  margin: 25px 0 12px;
+  color: #90a8ad;
+  text-align: center;
+}
+
+.xchips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+}
+
+.xchip {
+  border-color: #315a64;
+  background: #0d2b33;
+}
+
+[data-theme="light"] .alsohead {
+  color: #526f77;
+}
+
+[data-theme="light"] .xchip {
+  border-color: #9db8bf;
+  background: #ffffff;
+  color: #24434c;
+  box-shadow: 0 4px 12px rgba(22, 64, 74, 0.08);
+}
+
+[data-theme="light"] .xchip:hover {
+  border-color: var(--lava);
+  background: #fff7f5;
+  color: #132d35;
+}
+
+[data-theme="light"] .xchip .flag {
+  color: #c72f1d;
+  font-weight: 700;
+}
+
+[data-theme="light"] .pdhead .db,
+[data-theme="light"] .pdhead .dai,
+[data-theme="light"] .pdhead .dai small,
+[data-theme="light"] .pdhead .tag {
+  color: #132d35;
+}
+
+[data-theme="light"] .pdiagram {
+  border-color: #b7d0d4;
+  background: #dfecef;
+}
+
+[data-theme="light"] .player.apps,
+[data-theme="light"] .player.work {
+  border-color: #ce8378;
+  background: #e9e0dd;
+}
+
+[data-theme="light"] .player.governance,
+[data-theme="light"] .player.data,
+[data-theme="light"] .player.infra {
+  border-color: #7daaba;
+  background: #c9e0e6;
+}
+
+[data-theme="light"] .player > .lbl,
+[data-theme="light"] .pditem .iname,
+[data-theme="light"] .workcontent .lbl.right,
+[data-theme="light"] .infralabel,
+[data-theme="light"] .pditem.sm .iname {
+  color: #17313a;
+}
+
+[data-theme="light"] .pgroup {
+  border-color: #c9aba4;
+  background: #ddcfcb;
+}
+
+@media (max-width: 1340px) {
+  .pdhead {
+    gap: 22px;
+  }
+
+  .player {
+    grid-template-columns: 175px minmax(0, 1fr);
+  }
+
+  .pdrow.worktop {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .workcontent .lbl.right {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .pgroup {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 860px) {
+  .wrap {
+    padding-inline: 20px;
+  }
+
+  .pdhead {
+    grid-template-columns: auto 1px auto;
+  }
+
+  .pdhead .tag {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .pdhead .sep:last-of-type {
+    display: none;
+  }
+
+  .player {
+    grid-template-columns: 1fr;
+  }
+
+  .player > .lbl,
+  .workcontent .lbl.right {
+    text-align: left;
+  }
+
+  .pdrow.worktop {
+    grid-template-columns: 1fr;
+  }
+
+  .pdrow.infra {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .infragap {
+    display: none;
+  }
+
+  .event-meta {
+    text-align: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .wrap {
+    padding-inline: 14px;
+  }
+
+  .topnav .row {
+    overflow-x: auto;
+  }
+
+  .brand small,
+  .crumb {
+    display: none;
+  }
+
+  .pdwrap {
+    padding-top: 22px;
+  }
+
+  .pdhead {
+    gap: 14px;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+
+  .pdhead .dbmark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .pdhead .sep {
+    height: 38px;
+  }
+
+  .pdiagram {
+    padding: 10px;
+    border-radius: 17px;
+  }
+
+  .player {
+    padding: 15px;
+  }
+
+  .pdrow {
+    justify-content: flex-start;
+    gap: 22px;
+  }
+
+  .pgroup {
+    width: 100%;
+  }
+
+}
